@@ -1,0 +1,16 @@
+- id: docstring-comment-check
+  name: docstring and comment check
+  description: Docstrings max 1-2 lines; comments prohibited except '# TODO'
+  entry: docstring-comment-check
+  language: python
+  types: [python]
+- id: empty-init-check
+  name: __init__.py must be empty
+  entry: empty-init-check
+  language: python
+  files: (^|/)__init__\.py$
+- id: relative-import-check
+  name: relative imports prohibited
+  entry: relative-import-check
+  language: python
+  types: [python]
