@@ -8,6 +8,7 @@ Pre-commit хуки для правил Python из AGENTS.md.
 | --- | --- |
 | `docstring-comment-check` | docstring модуля запрещён; docstring функции/класса — максимум 2 строки; комментарии запрещены, кроме `# TODO` (shebang и encoding-cookie разрешены) |
 | `empty-init-check` | `__init__.py` должен быть пустым |
+| `old-string-format-check` | запрещено старое форматирование строк через `%`; разрешены f-строки и `.format()` |
 | `relative-import-check` | относительные импорты запрещены |
 
 Версия Python не фиксируется: pre-commit запускает хуки на интерпретаторе
@@ -23,6 +24,7 @@ Pre-commit хуки для правил Python из AGENTS.md.
   hooks:
     - id: docstring-comment-check
     - id: empty-init-check
+    - id: old-string-format-check
     - id: relative-import-check
 ```
 

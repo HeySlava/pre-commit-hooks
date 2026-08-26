@@ -9,6 +9,12 @@
   entry: empty-init-check
   language: python
   files: (^|/)__init__\.py$
+- id: old-string-format-check
+  name: old-style string formatting check
+  description: Forbids printf-style % formatting; allows f-strings and .format()
+  entry: old-string-format-check
+  language: python
+  types: [python]
 - id: relative-import-check
   name: relative imports prohibited
   entry: relative-import-check
