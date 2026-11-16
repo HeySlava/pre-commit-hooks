@@ -1,25 +1,25 @@
-# agent-hooks
+# pre-commit-hooks
 
-Pre-commit хуки для правил Python из AGENTS.md.
+Pre-commit hooks for enforcing Python code conventions.
 
-## Хуки
+## Hooks
 
-| id | Проверка |
+| id | Check |
 | --- | --- |
-| `docstring-comment-check` | docstring модуля запрещён; docstring функции/класса — максимум 2 строки; комментарии запрещены, кроме `# TODO` (shebang и encoding-cookie разрешены) |
-| `empty-init-check` | `__init__.py` должен быть пустым |
-| `old-string-format-check` | запрещено старое форматирование строк через `%`; разрешены f-строки и `.format()` |
-| `relative-import-check` | относительные импорты запрещены |
+| `docstring-comment-check` | Module docstrings are prohibited; function and class docstrings may contain at most 2 lines; comments are prohibited except for `# TODO` (shebangs and encoding cookies are allowed) |
+| `empty-init-check` | `__init__.py` must be empty |
+| `old-string-format-check` | Old-style string formatting with `%` is prohibited; f-strings and `.format()` are allowed |
+| `relative-import-check` | Relative imports are prohibited |
 
-Версия Python не фиксируется: pre-commit запускает хуки на интерпретаторе
-из своего окружения, код совместим с любым Python 3.
+The Python version is not pinned: pre-commit runs the hooks using the interpreter
+from its environment, and the code is compatible with any Python 3 version.
 
-## Подключение в проекте
+## Usage
 
-`.pre-commit-config.yaml`:
+Add the following to `.pre-commit-config.yaml`:
 
 ```yaml
-- repo: <url-этого-репозитория>
+- repo: https://github.com/HeySlava/pre-commit-hooks
   rev: v0.1.0
   hooks:
     - id: docstring-comment-check
@@ -28,7 +28,7 @@ Pre-commit хуки для правил Python из AGENTS.md.
     - id: relative-import-check
 ```
 
-## Разработка
+## Development
 
 ```bash
 tox -p
